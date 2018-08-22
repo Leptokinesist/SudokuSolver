@@ -25,7 +25,7 @@ class PuzzleViewController: UIViewController {
         grid.isScrollEnabled = false
         grid.dataSource = self
         grid.delegate = self
-        grid.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "SudokuCell")
+        grid.register(SudokuCell.self, forCellWithReuseIdentifier: "SudokuCell")
         
         return grid
     }()
@@ -113,8 +113,9 @@ extension PuzzleViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SudokuCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SudokuCell", for: indexPath) as! SudokuCell
         cell.backgroundColor = UIColor.magenta
+        cell.valueLabel.text = "9"
         return cell
     }
 }
