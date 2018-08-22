@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C1F2C7CB212C423B009B3550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7CA212C423B009B3550 /* AppDelegate.swift */; };
-		C1F2C7CD212C423B009B3550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7CC212C423B009B3550 /* ViewController.swift */; };
-		C1F2C7D0212C423B009B3550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F2C7CE212C423B009B3550 /* Main.storyboard */; };
+		C1F2C7CD212C423B009B3550 /* PuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7CC212C423B009B3550 /* PuzzleViewController.swift */; };
 		C1F2C7D2212C423C009B3550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F2C7D1212C423C009B3550 /* Assets.xcassets */; };
 		C1F2C7D5212C423C009B3550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F2C7D3212C423C009B3550 /* LaunchScreen.storyboard */; };
 		C1F2C7E0212C423C009B3550 /* SudokuSolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7DF212C423C009B3550 /* SudokuSolverTests.swift */; };
@@ -28,8 +27,7 @@
 /* Begin PBXFileReference section */
 		C1F2C7C7212C423B009B3550 /* SudokuSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SudokuSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F2C7CA212C423B009B3550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C1F2C7CC212C423B009B3550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C1F2C7CF212C423B009B3550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C1F2C7CC212C423B009B3550 /* PuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleViewController.swift; sourceTree = "<group>"; };
 		C1F2C7D1212C423C009B3550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1F2C7D4212C423C009B3550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1F2C7D6212C423C009B3550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,8 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				C1F2C7CA212C423B009B3550 /* AppDelegate.swift */,
-				C1F2C7CC212C423B009B3550 /* ViewController.swift */,
-				C1F2C7CE212C423B009B3550 /* Main.storyboard */,
+				C1F2C7CC212C423B009B3550 /* PuzzleViewController.swift */,
 				C1F2C7D1212C423C009B3550 /* Assets.xcassets */,
 				C1F2C7D3212C423C009B3550 /* LaunchScreen.storyboard */,
 				C1F2C7D6212C423C009B3550 /* Info.plist */,
@@ -179,7 +176,6 @@
 			files = (
 				C1F2C7D5212C423C009B3550 /* LaunchScreen.storyboard in Resources */,
 				C1F2C7D2212C423C009B3550 /* Assets.xcassets in Resources */,
-				C1F2C7D0212C423B009B3550 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1F2C7CD212C423B009B3550 /* ViewController.swift in Sources */,
+				C1F2C7CD212C423B009B3550 /* PuzzleViewController.swift in Sources */,
 				C1F2C7CB212C423B009B3550 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,14 +217,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C1F2C7CE212C423B009B3550 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C1F2C7CF212C423B009B3550 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C1F2C7D3212C423C009B3550 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

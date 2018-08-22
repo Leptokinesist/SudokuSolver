@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        guard let safeWindow = window else {
+            fatalError("Unable to load window from main screen")
+        }
+        
+        // Load our root (and only) view controller
+        let puzzleVC = PuzzleViewController()
+        safeWindow.rootViewController = puzzleVC
+        safeWindow.makeKeyAndVisible()
         return true
     }
 
