@@ -13,6 +13,8 @@
 		C1F2C7D5212C423C009B3550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1F2C7D3212C423C009B3550 /* LaunchScreen.storyboard */; };
 		C1F2C7E0212C423C009B3550 /* SudokuSolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7DF212C423C009B3550 /* SudokuSolverTests.swift */; };
 		C1F2C7F0212DDE83009B3550 /* SudokuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7EF212DDE83009B3550 /* SudokuCell.swift */; };
+		C1F2C7F2212E1392009B3550 /* SudokuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7F1212E1392009B3550 /* SudokuCellViewModel.swift */; };
+		C1F2C7F4212E1E51009B3550 /* SudokuPuzzleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7F3212E1E51009B3550 /* SudokuPuzzleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		C1F2C7DF212C423C009B3550 /* SudokuSolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuSolverTests.swift; sourceTree = "<group>"; };
 		C1F2C7E1212C423C009B3550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1F2C7EF212DDE83009B3550 /* SudokuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuCell.swift; sourceTree = "<group>"; };
+		C1F2C7F1212E1392009B3550 /* SudokuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuCellViewModel.swift; sourceTree = "<group>"; };
+		C1F2C7F3212E1E51009B3550 /* SudokuPuzzleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuPuzzleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 		C1F2C7ED212DDE23009B3550 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C1F2C7F1212E1392009B3550 /* SudokuCellViewModel.swift */,
+				C1F2C7F3212E1E51009B3550 /* SudokuPuzzleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -229,8 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1F2C7CD212C423B009B3550 /* PuzzleViewController.swift in Sources */,
+				C1F2C7F4212E1E51009B3550 /* SudokuPuzzleViewModel.swift in Sources */,
 				C1F2C7F0212DDE83009B3550 /* SudokuCell.swift in Sources */,
 				C1F2C7CB212C423B009B3550 /* AppDelegate.swift in Sources */,
+				C1F2C7F2212E1392009B3550 /* SudokuCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
