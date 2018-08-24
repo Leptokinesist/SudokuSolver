@@ -1,6 +1,6 @@
 //
-//  SudokuPuzzleModelTests.swift
-//  SudokuPuzzleModelTests
+//  SudokuPuzzleViewModelTests.swift
+//  SudokuPuzzleViewModelTests
 //
 //  Created by Shawn Collins on 2018-08-21.
 //  Copyright © 2018 Shawn Collins. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import SudokuSolver
 
-class SudokuPuzzleModelTests: XCTestCase {
+class SudokuPuzzleViewModelTests: XCTestCase {
     
     let testGridOrder: Grid = {
         let cells = Array(1...9).map {y -> [Cell] in
