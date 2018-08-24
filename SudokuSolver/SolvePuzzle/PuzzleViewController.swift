@@ -10,7 +10,18 @@ import UIKit
 
 class PuzzleViewController: UIViewController {
     
-    let viewModel = SudokuPuzzleViewModelLoadGrid()
+    // Something you can modify/test with :D
+    static let initialPuzzleGrid = Grid(intMatrix: [[5,3,0,0,7,0,0,0,0],
+                                                    [6,0,0,1,9,5,0,0,0],
+                                                    [0,9,8,0,0,0,0,6,0],
+                                                    [8,0,0,0,6,0,0,0,3],
+                                                    [4,0,0,8,0,3,0,0,1],
+                                                    [7,0,0,0,2,0,0,0,6],
+                                                    [0,6,0,0,0,0,2,8,0],
+                                                    [0,0,0,4,1,9,0,0,5],
+                                                    [0,0,0,0,8,0,0,7,9]])
+    
+    let viewModel = SudokuPuzzleViewModelLoadGrid(grid: initialPuzzleGrid)
     
     fileprivate lazy var gridViewSizeValue: CGFloat = { [unowned self] in
         // Smallest of width or height with spacing (in case of different orientations)
@@ -34,9 +45,9 @@ class PuzzleViewController: UIViewController {
     
     let solveButton: UIButton = {
         let button = UIButton(frame: .zero)
-        button.setTitle("Solve", for: .normal)
+        button.setTitle(Constants.solveButtonSolveText, for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("Solved", for: .disabled)
+        button.setTitle(Constants.solveButtonSolvingText, for: .disabled)
         button.setTitleColor(UIColor.gray, for: .disabled)
         button.titleLabel?.font = UIFont.italicSystemFont(ofSize: 32.0)
         button.layer.cornerRadius = 10
@@ -52,6 +63,13 @@ class PuzzleViewController: UIViewController {
         static let puzzleGridSize: CGFloat = 9
         static let solveButtonBorderColor: UIColor = .lightGray
         static let solveButtonBorderWidth: CGFloat = 2.0
+        static let solveButtonSolveText = "Solve"
+        static let solveButtonSolvingText = "Solving..."
+        static let solveButtonResetText = "Reset"
+    }
+    
+    var isButtonResetting: Bool {
+        return solveButton.titleLabel?.text == Constants.solveButtonResetText
     }
 
     override func viewDidLoad() {
@@ -112,8 +130,7 @@ class PuzzleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc
-    func solvePress() {
+    func startSolving() {
         solveButton.isEnabled = false
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         activityIndicator.frame = view.bounds
@@ -124,8 +141,25 @@ class PuzzleViewController: UIViewController {
         viewModel.solvePuzzle {[unowned self] done, error in
             activityIndicator.stopAnimating()
             activityIndicator.removeFromSuperview()
+            self.solveButton.isEnabled = true
+            self.solveButton.setTitle(Constants.solveButtonResetText, for: .normal)
             self.gridCollectionView.reloadData()
+            
+            if let error = error {
+                self.showToast(message: "An error occurred while solving the puzzle: \(error)")
+            }
         }
+    }
+    
+    func resetPuzzle() {
+        viewModel.resetPuzzle()
+        solveButton.setTitle(Constants.solveButtonSolveText, for: .normal)
+        gridCollectionView.reloadData()
+    }
+    
+    @objc
+    func solvePress() {
+        isButtonResetting ? resetPuzzle() : startSolving()
     }
 }
 

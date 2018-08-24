@@ -37,8 +37,10 @@ struct SudokuCellViewModelFromRowColumnPair: SudokuCellViewModel {
 class SudokuPuzzleViewModelLoadGrid: SudokuPuzzleViewModel {
     
     let model: SudokuPuzzleModel
+    let initialGrid: Grid
     
-    init(grid: Grid = Grid(cells: Array(repeating: Array(repeating: Cell.candidate(nil), count: 9), count: 9))) {
+    init(grid: Grid) {
+        self.initialGrid = grid
         model = SudokuPuzzleModel(puzzle: grid)
     }
     
@@ -49,7 +51,11 @@ class SudokuPuzzleViewModelLoadGrid: SudokuPuzzleViewModel {
         return cellViewModel
     }
     
-    func solvePuzzle(_ handler: @escaping (Bool, Error?) -> Void) {
+    func solvePuzzle(_ handler: @escaping PuzzleSolvingProgress) {
         model.solvePuzzle(handler)
+    }
+    
+    func resetPuzzle() {
+        model.puzzle = initialGrid
     }
 }

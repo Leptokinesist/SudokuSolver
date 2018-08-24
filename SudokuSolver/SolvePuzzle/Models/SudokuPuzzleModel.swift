@@ -22,11 +22,24 @@ class SudokuPuzzleModel {
     }
     
     func solvePuzzle(_ handler: @escaping (_ done: Bool, _ error: Error?) -> Void) {
-        // TODO: Create new async task call for solving puzzle
+        /*
+         Create new async task call for solving puzzle (supports long processing times, but faked for now)
+         as we want to display a spinner while "solving" in case the algorithm is still working away
+         Note: A better approach would be to throttle this at the view layer for better UX
+         */
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.puzzle = Grid(cells: Array(repeating: Array(repeating: .candidate(4), count: 9), count: 9))
-            handler(true, nil)
+            
+            BruteForceSudokuSolver().solveGrid(strongSelf.puzzle) {[weak self] solvedGrid, solvingError in
+                guard let strongSelf = self else { return }
+                
+                if let puzzle = solvedGrid {
+                    strongSelf.puzzle = puzzle
+                    handler(true, solvingError)
+                } else {
+                    handler(false, solvingError)
+                }
+            }
         })
     }
 }

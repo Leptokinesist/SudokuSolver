@@ -43,6 +43,7 @@ class SudokuPuzzleModelTests: XCTestCase {
                                [3,4,5,2,8,6,1,7,9]]
     
     let testGridSolvableBase = Grid(intMatrix: baseMatrix)
+    let testGridSolved = Grid(intMatrix: solvedMatrix)
     
     override func setUp() {
         super.setUp()
@@ -66,7 +67,26 @@ class SudokuPuzzleModelTests: XCTestCase {
     }
     
     func testSolvePuzzle() {
+        let expectationOfCallback = expectation(description: "CallBack need to fulfill this requirement")
         
+        let viewModel = SudokuPuzzleViewModelLoadGrid(grid: testGridSolvableBase)
+        viewModel.solvePuzzle{[unowned self] done, error in
+            XCTAssertTrue(done, "Puzzle is solvable")
+            XCTAssertNil(error, "No errors occurred")
+            
+            let solvedViewModel = SudokuPuzzleViewModelLoadGrid(grid: self.testGridSolved)
+            
+            for index in Array(0..<81) {
+                XCTAssertEqual(viewModel.cell(at: index).number, solvedViewModel.cell(at: index).number, "ViewModels should match at this point")
+            }
+            expectationOfCallback.fulfill()
+        }
+        
+        waitForExpectations(timeout: 20) { error in
+            if let error = error {
+                XCTFail("waitForExpectations errored: \(error)")
+            }
+        }
     }
     
 }

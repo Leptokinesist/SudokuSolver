@@ -21,6 +21,7 @@
 		C1F2C7FC21303022009B3550 /* SudokuPuzzleViewModelLoadGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7FB21303022009B3550 /* SudokuPuzzleViewModelLoadGrid.swift */; };
 		C1F2C8002130605F009B3550 /* SudokuSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7FF2130605F009B3550 /* SudokuSolver.swift */; };
 		C1F2C8022130612F009B3550 /* BruteForceSudokuSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C8012130612F009B3550 /* BruteForceSudokuSolver.swift */; };
+		C1F2C80421307D1C009B3550 /* UIViewController+showToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C80321307D1C009B3550 /* UIViewController+showToast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		C1F2C7FB21303022009B3550 /* SudokuPuzzleViewModelLoadGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuPuzzleViewModelLoadGrid.swift; sourceTree = "<group>"; };
 		C1F2C7FF2130605F009B3550 /* SudokuSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuSolver.swift; sourceTree = "<group>"; };
 		C1F2C8012130612F009B3550 /* BruteForceSudokuSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForceSudokuSolver.swift; sourceTree = "<group>"; };
+		C1F2C80321307D1C009B3550 /* UIViewController+showToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+showToast.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C1F2C7CA212C423B009B3550 /* AppDelegate.swift */,
+				C1F2C80321307D1C009B3550 /* UIViewController+showToast.swift */,
 				C1F2C7EB212DDDDC009B3550 /* SolvePuzzle */,
 				C1F2C7D1212C423C009B3550 /* Assets.xcassets */,
 				C1F2C7D3212C423C009B3550 /* LaunchScreen.storyboard */,
@@ -254,6 +257,7 @@
 			files = (
 				C1F2C7CD212C423B009B3550 /* PuzzleViewController.swift in Sources */,
 				C1F2C7F4212E1E51009B3550 /* SudokuPuzzleViewModel.swift in Sources */,
+				C1F2C80421307D1C009B3550 /* UIViewController+showToast.swift in Sources */,
 				C1F2C7F0212DDE83009B3550 /* SudokuCell.swift in Sources */,
 				C1F2C7CB212C423B009B3550 /* AppDelegate.swift in Sources */,
 				C1F2C7FC21303022009B3550 /* SudokuPuzzleViewModelLoadGrid.swift in Sources */,
