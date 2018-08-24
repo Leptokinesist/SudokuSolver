@@ -12,9 +12,16 @@ typealias RowColumnPair = (row: Int, column: Int)
 
 class SudokuPuzzleModel {
     var puzzle: Grid
+    var solver: SudokuSolver
     
     init(puzzle: Grid) {
         self.puzzle = puzzle
+        
+        /*
+         Another pattern would be to have various solving strategies available/configurable/loadable via
+         a SudokuSolverProvider. We'll keep the abstraction but load a default one for now.
+         */
+        self.solver = BruteForceSudokuSolver()
     }
     
     func cell(at location: RowColumnPair) -> Cell {
@@ -30,7 +37,7 @@ class SudokuPuzzleModel {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: { [weak self] in
             guard let strongSelf = self else { return }
             
-            BruteForceSudokuSolver().solveGrid(strongSelf.puzzle) {[weak self] solvedGrid, solvingError in
+            strongSelf.solver.solveGrid(strongSelf.puzzle) {[weak self] solvedGrid, solvingError in
                 guard let strongSelf = self else { return }
                 
                 if let puzzle = solvedGrid {

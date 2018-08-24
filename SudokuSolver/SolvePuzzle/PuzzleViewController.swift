@@ -21,6 +21,10 @@ class PuzzleViewController: UIViewController {
                                                     [0,0,0,4,1,9,0,0,5],
                                                     [0,0,0,0,8,0,0,7,9]])
     
+    /*
+     Grid definitions could be provided from various sources; with some slight modifications
+     to the viewModel, we could allow those to be loaded up for re-rendering.
+     */
     let viewModel = SudokuPuzzleViewModelLoadGrid(grid: initialPuzzleGrid)
     
     fileprivate lazy var gridViewSizeValue: CGFloat = { [unowned self] in

@@ -44,7 +44,8 @@ struct BruteForceSudokuSolver: SudokuSolver {
     }
 }
 
-extension Grid {
+// This Solver needs a way to get the nextEmptyCell, lookup strategy is pretty specific to this implementation
+fileprivate extension Grid {
     var nextEmptyCell: RowColumnPair? {
         for row in Array(0..<9) {
             for column in Array(0..<9) {

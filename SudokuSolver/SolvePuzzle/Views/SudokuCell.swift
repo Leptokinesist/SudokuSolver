@@ -25,28 +25,28 @@ class SudokuCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var leftBorder: CALayer = { [unowned self] in
+    private lazy var leftBorder: CALayer = { [unowned self] in
         let border = CALayer()
         border.frame = CGRect(x: 0, y: 0, width: Constants.borderWidth, height: self.frame.size.height)
         border.backgroundColor = UIColor.black.cgColor
         return border
     }()
     
-    lazy var topBorder: CALayer = { [unowned self] in
+    private lazy var topBorder: CALayer = { [unowned self] in
         let border = CALayer()
         border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: Constants.borderWidth)
         border.backgroundColor = UIColor.black.cgColor
         return border
     }()
     
-    lazy var bottomBorder: CALayer = { [unowned self] in
+    private lazy var bottomBorder: CALayer = { [unowned self] in
         let border = CALayer()
         border.frame = CGRect(x: 0, y: self.frame.size.height - Constants.borderWidth, width: self.frame.size.width, height: Constants.borderWidth)
         border.backgroundColor = UIColor.black.cgColor
         return border
     }()
     
-    lazy var rightBorder: CALayer = { [unowned self] in
+    private lazy var rightBorder: CALayer = { [unowned self] in
         let border = CALayer()
         border.frame = CGRect(x: self.frame.size.width - Constants.borderWidth, y: 0, width: Constants.borderWidth, height: self.frame.size.height)
         border.backgroundColor = UIColor.black.cgColor
