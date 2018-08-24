@@ -9,6 +9,7 @@
 import Foundation
 
 typealias RowColumnPair = (row: Int, column: Int)
+
 class SudokuPuzzleModel {
     var puzzle: Grid
     
@@ -24,7 +25,7 @@ class SudokuPuzzleModel {
         // TODO: Create new async task call for solving puzzle
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.puzzle = Grid(cells: Array(repeating: Array(repeating: Cell.candidate(4), count: 9), count: 9))
+            strongSelf.puzzle = Grid(cells: Array(repeating: Array(repeating: .candidate(4), count: 9), count: 9))
             handler(true, nil)
         })
     }

@@ -19,6 +19,8 @@
 		C1F2C7F8212F0142009B3550 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7F7212F0142009B3550 /* Grid.swift */; };
 		C1F2C7FA212F0160009B3550 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7F9212F0160009B3550 /* Cell.swift */; };
 		C1F2C7FC21303022009B3550 /* SudokuPuzzleViewModelLoadGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7FB21303022009B3550 /* SudokuPuzzleViewModelLoadGrid.swift */; };
+		C1F2C8002130605F009B3550 /* SudokuSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C7FF2130605F009B3550 /* SudokuSolver.swift */; };
+		C1F2C8022130612F009B3550 /* BruteForceSudokuSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F2C8012130612F009B3550 /* BruteForceSudokuSolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		C1F2C7F7212F0142009B3550 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		C1F2C7F9212F0160009B3550 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		C1F2C7FB21303022009B3550 /* SudokuPuzzleViewModelLoadGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuPuzzleViewModelLoadGrid.swift; sourceTree = "<group>"; };
+		C1F2C7FF2130605F009B3550 /* SudokuSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuSolver.swift; sourceTree = "<group>"; };
+		C1F2C8012130612F009B3550 /* BruteForceSudokuSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BruteForceSudokuSolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				C1F2C7F5212F0089009B3550 /* SudokuPuzzleModel.swift */,
+				C1F2C7FF2130605F009B3550 /* SudokuSolver.swift */,
+				C1F2C8012130612F009B3550 /* BruteForceSudokuSolver.swift */,
 				C1F2C7F7212F0142009B3550 /* Grid.swift */,
 				C1F2C7F9212F0160009B3550 /* Cell.swift */,
 			);
@@ -251,8 +257,10 @@
 				C1F2C7F0212DDE83009B3550 /* SudokuCell.swift in Sources */,
 				C1F2C7CB212C423B009B3550 /* AppDelegate.swift in Sources */,
 				C1F2C7FC21303022009B3550 /* SudokuPuzzleViewModelLoadGrid.swift in Sources */,
+				C1F2C8002130605F009B3550 /* SudokuSolver.swift in Sources */,
 				C1F2C7F6212F0089009B3550 /* SudokuPuzzleModel.swift in Sources */,
 				C1F2C7FA212F0160009B3550 /* Cell.swift in Sources */,
+				C1F2C8022130612F009B3550 /* BruteForceSudokuSolver.swift in Sources */,
 				C1F2C7F8212F0142009B3550 /* Grid.swift in Sources */,
 				C1F2C7F2212E1392009B3550 /* SudokuCellViewModel.swift in Sources */,
 			);
