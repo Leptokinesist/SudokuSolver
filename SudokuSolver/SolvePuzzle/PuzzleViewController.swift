@@ -36,6 +36,8 @@ class PuzzleViewController: UIViewController {
         let button = UIButton(frame: .zero)
         button.setTitle("Solve", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        button.setTitle("Solved", for: .disabled)
+        button.setTitleColor(UIColor.gray, for: .disabled)
         button.titleLabel?.font = UIFont.italicSystemFont(ofSize: 32.0)
         button.layer.cornerRadius = 10
         button.layer.borderColor = Constants.solveButtonBorderColor.cgColor
@@ -56,6 +58,7 @@ class PuzzleViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = Constants.backgroundColor
+        solveButton.addTarget(self, action: #selector(PuzzleViewController.solvePress), for: .touchUpInside)
         
         let views: [String: Any] = [
             "gridCollectionView": gridCollectionView,
@@ -107,6 +110,22 @@ class PuzzleViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc
+    func solvePress() {
+        solveButton.isEnabled = false
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicator.frame = view.bounds
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
+        viewModel.solvePuzzle {[unowned self] done, error in
+            activityIndicator.stopAnimating()
+            activityIndicator.removeFromSuperview()
+            self.gridCollectionView.reloadData()
+        }
     }
 }
 
