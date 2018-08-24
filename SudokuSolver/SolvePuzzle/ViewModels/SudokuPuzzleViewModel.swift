@@ -11,6 +11,6 @@ import Foundation
 typealias PuzzleSolvingProgress = (_ done: Bool, _ error: Error?) -> Void
 
 protocol SudokuPuzzleViewModel {
-    func getCell(at index: Int) -> SudokuCellViewModel
-    func solvePuzzle(_: PuzzleSolvingProgress)
+    func cell(at index: Int) -> SudokuCellViewModel
+    func solvePuzzle(_ handler: @escaping PuzzleSolvingProgress)
 }

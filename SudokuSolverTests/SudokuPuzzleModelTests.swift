@@ -1,6 +1,6 @@
 //
-//  SudokuSolverTests.swift
-//  SudokuSolverTests
+//  SudokuPuzzleModelTests.swift
+//  SudokuPuzzleModelTests
 //
 //  Created by Shawn Collins on 2018-08-21.
 //  Copyright © 2018 Shawn Collins. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import SudokuSolver
 
-class SudokuSolverTests: XCTestCase {
+class SudokuPuzzleModelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,13 @@ class SudokuSolverTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testLoadPuzzle() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testSolvePuzzle() {
+        
     }
     
 }

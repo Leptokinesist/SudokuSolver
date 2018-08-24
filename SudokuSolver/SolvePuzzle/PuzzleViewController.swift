@@ -10,6 +10,8 @@ import UIKit
 
 class PuzzleViewController: UIViewController {
     
+    let viewModel = SudokuPuzzleViewModelLoadGrid()
+    
     fileprivate lazy var gridViewSizeValue: CGFloat = { [unowned self] in
         // Smallest of width or height with spacing (in case of different orientations)
         return min(self.view.bounds.width * 0.9, self.view.bounds.height * 0.9)
@@ -52,6 +54,7 @@ class PuzzleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = Constants.backgroundColor
         
         let views: [String: Any] = [
@@ -115,7 +118,7 @@ extension PuzzleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SudokuCell", for: indexPath) as! SudokuCell
         cell.backgroundColor = UIColor.magenta
-        // cell.update(with: viewModel.cell(at: (row: indexPath.item % 9, column: indexPath.item / 9))
+        cell.update(with: viewModel.cell(at: indexPath.item))
         return cell
     }
 }
