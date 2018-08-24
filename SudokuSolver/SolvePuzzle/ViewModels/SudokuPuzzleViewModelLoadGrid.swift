@@ -17,7 +17,7 @@ struct SudokuCellViewModelFromRowColumnPair: SudokuCellViewModel {
     }
     
     var position: CellPosition {
-        let (squareX, squareY) = (rowAndColumn.row % 3, rowAndColumn.column % 3)
+        let (squareX, squareY) = (rowAndColumn.column % 3, rowAndColumn.row % 3)
         switch (squareX, squareY) {
         case (0, 0): return .topLeft
         case (0, 1): return .middleLeft
@@ -36,10 +36,14 @@ struct SudokuCellViewModelFromRowColumnPair: SudokuCellViewModel {
 
 class SudokuPuzzleViewModelLoadGrid: SudokuPuzzleViewModel {
     
-    let model = SudokuPuzzleModel()
+    let model: SudokuPuzzleModel
+    
+    init(grid: Grid = Grid(cells: Array(repeating: Array(repeating: Cell.candidate(nil), count: 9), count: 9))) {
+        model = SudokuPuzzleModel(puzzle: grid)
+    }
     
     func cell(at index: Int) -> SudokuCellViewModel {
-        let rowColumn = RowColumnPair(row: index % 9, column: index / 9)
+        let rowColumn = RowColumnPair(row: index / 9, column: index % 9)
         let cell = model.cell(at: rowColumn)
         let cellViewModel = SudokuCellViewModelFromRowColumnPair(cell: cell, rowAndColumn: rowColumn)
         return cellViewModel

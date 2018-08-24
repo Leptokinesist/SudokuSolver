@@ -10,7 +10,11 @@ import Foundation
 
 typealias RowColumnPair = (row: Int, column: Int)
 class SudokuPuzzleModel {
-    var puzzle = Grid(cells: Array(repeating: Array(repeating: Cell.candidate(nil), count: 9), count: 9))
+    var puzzle: Grid
+    
+    init(puzzle: Grid) {
+        self.puzzle = puzzle
+    }
     
     func cell(at location: RowColumnPair) -> Cell {
         return puzzle.cells[location.row][location.column]
